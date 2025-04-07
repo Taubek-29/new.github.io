@@ -1,0 +1,332 @@
+:root {
+    --primary: #6e8efb;
+    --primary-dark: #5a7df5;
+    --secondary: #a777e3;
+    --dark: #1a1a1a;
+    --light: #f8f9fa;
+    --gray: #6c757d;
+    --white: #ffffff;
+    --black: #000000;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+.portfolio-theme {
+    min-height: 100vh;
+    padding: 80px 5%;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.portfolio-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.portfolio-title h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.portfolio-title p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.theme-selector select {
+    padding: 10px 15px;
+    border-radius: 50px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.theme-selector select:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.theme-selector select:focus {
+    outline: none;
+}
+
+.portfolio-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section {
+    margin-bottom: 100px;
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+    font-weight: 600;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--white);
+    border-radius: 2px;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.skill {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: var(--transition);
+}
+
+.skill:hover {
+    transform: translateY(-3px);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    transition: var(--transition);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.contact-info {
+    font-size: 1.2rem;
+}
+
+.contact-info a {
+    color: var(--white);
+    text-decoration: none;
+    border-bottom: 1px solid var(--white);
+    transition: var(--transition);
+}
+
+.contact-info a:hover {
+    opacity: 0.8;
+}
+
+.edit-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--white);
+    color: var(--dark);
+    border: none;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    z-index: 100;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.edit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.edit-btn i {
+    font-size: 1rem;
+}
+
+/* Тема: Минимализм */
+.theme-minimal {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: var(--dark);
+}
+
+.theme-minimal .section h2::after {
+    background: var(--primary);
+}
+
+.theme-minimal .skill {
+    background: rgba(110, 142, 251, 0.1);
+    color: var(--dark);
+}
+
+.theme-minimal .project-card {
+    background: var(--white);
+    color: var(--dark);
+    box-shadow: var(--shadow);
+}
+
+.theme-minimal .contact-info a {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
+.theme-minimal .theme-selector select {
+    background-color: rgba(110, 142, 251, 0.1);
+    color: var(--dark);
+}
+
+/* Тема: Креативный */
+.theme-creative {
+    background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
+}
+
+.theme-creative .section h2::after {
+    background: var(--white);
+}
+
+.theme-creative .skill {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.theme-creative .project-card {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Тема: Технологичный */
+.theme-tech {
+    background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+}
+
+.theme-tech .section h2::after {
+    background: var(--white);
+}
+
+.theme-tech .skill {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.theme-tech .project-card {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Тема: Элегантный */
+.theme-elegant {
+    background: linear-gradient(135deg, #614385 0%, #516395 100%);
+}
+
+.theme-elegant .section h2::after {
+    background: var(--white);
+}
+
+.theme-elegant .skill {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.theme-elegant .project-card {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Анимации */
+.animate__animated {
+    opacity: 0;
+}
+
+.animate__fadeIn {
+    animation: fadeIn 1s forwards;
+}
+
+.animate__fadeInUp {
+    animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { 
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .portfolio-header {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 50px;
+    }
+    
+    .portfolio-title h1 {
+        font-size: 2.5rem;
+    }
+    
+    .section {
+        margin-bottom: 70px;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-title h1 {
+        font-size: 2rem;
+    }
+    
+    .section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .edit-btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+}
